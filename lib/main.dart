@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
           SizedBox(height: 16.0),
           Text(
             posts[index].title,
-            style: Theme.of(context).textTheme.title,
+            style: Theme.of(context).textTheme.headline6,
           ),
           Text(
             posts[index].author,
