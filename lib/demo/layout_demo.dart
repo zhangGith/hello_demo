@@ -7,15 +7,30 @@ class LayoutDemo extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AspectRatio(
-            aspectRatio: 16.0 / 9.0,
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 200.0,
+              minHeight: 200.0,
+            ),
             child: Container(
-              color: Colors.yellowAccent,
+              color: Colors.red,
             ),
           ),
         ],
       ),
     );
+  }
+}
+
+class AspectRatioDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+            aspectRatio: 16.0 / 9.0,
+            child: Container(
+              color: Colors.yellowAccent,
+            ),
+          );
   }
 }
 
