@@ -5,11 +5,12 @@ class LayoutDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-      children: [
-        IconBadge(Icons.pool),
-        IconBadge(Icons.beach_access),
-        IconBadge(Icons.airplanemode_active),
-      ],
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          IconBadge(Icons.pool),
+          IconBadge(Icons.beach_access),
+          IconBadge(Icons.airplanemode_active),
+        ],
     )
     );
   }
