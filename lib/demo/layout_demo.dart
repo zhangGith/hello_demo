@@ -11,6 +11,7 @@ class LayoutDemo extends StatelessWidget {
             width: 200.0,
             height: 200.0,
             child: Container(
+              alignment: Alignment(0.0, 1.0),
               decoration: BoxDecoration(
                 color: Color.fromRGBO(3, 55, 255, 1.0),
                 borderRadius: BorderRadius.circular(8.0),
@@ -27,7 +28,7 @@ class LayoutDemo extends StatelessWidget {
                 color: Color.fromRGBO(3, 55, 255, 1.0),
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              child: Icon(Icons.ac_unit, color: Colors.white, size: 32.0),
+              child: Icon(Icons.brightness_2, color: Colors.white, size: 32.0),
             ),
           ),
         ],
