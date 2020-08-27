@@ -7,6 +7,25 @@ class LayoutDemo extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          AspectRatio(
+            aspectRatio: 16.0 / 9.0,
+            child: Container(
+              color: Colors.yellowAccent,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class StackDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
           Stack(
             alignment: Alignment.topLeft,
             children: [
