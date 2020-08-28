@@ -15,9 +15,8 @@ class NavigatorDemo extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (BuildContext context) => Page(title: 'about'.toUpperCase())),
-                );
+                Navigator.pushNamed(context, '/about');
+                
               }, 
               child: Text('Home')
             ),
@@ -28,10 +27,10 @@ class NavigatorDemo extends StatelessWidget {
   }
 }
 
-class Page extends StatelessWidget {
+class PageDemo extends StatelessWidget {
 
   final String title;
-  Page({
+  PageDemo({
     this.title
   });
 
@@ -48,7 +47,6 @@ class Page extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-
     );
   }
 }

@@ -18,6 +18,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: NavigatorDemo(),
+      
+      routes: {
+        '/about': (context) => PageDemo(title: 'about'),
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Colors.white,
