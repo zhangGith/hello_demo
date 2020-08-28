@@ -73,7 +73,7 @@ class GridViewBuilderDemo extends StatelessWidget {
           posts[index].imageUrl,
           fit: BoxFit.cover,
         )
-      )
+      );
   }
 
   @override
