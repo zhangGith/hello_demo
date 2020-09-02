@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import '../model/post.dart';
 
 class ListViewDemo extends StatelessWidget {
-
-   Widget _listItemBuilder(BuildContext context, int index) {
+  Widget _listItemBuilder(BuildContext context, int index) {
     return Container(
       color: Colors.white,
       margin: EdgeInsets.all(8.0),
@@ -47,8 +46,8 @@ class ListViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-          itemBuilder: _listItemBuilder,
-          itemCount: posts.length,
-          );
+      itemBuilder: _listItemBuilder,
+      itemCount: posts.length,
+    );
   }
 }
