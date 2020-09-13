@@ -11,8 +11,94 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+            ListItem(title: 'ButtonDemo', page: ButtonDemo(),),
             ListItem(title: 'floatRaisedBtn', page: FloatRaisedBtn(),),
         ],
+      ),
+    );
+  }
+}
+
+class ButtonDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+
+    final Widget flatBtnDemo = Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  FlatButton(
+                    onPressed: () {}, 
+                    child: Text('FlatBtn'),
+                    splashColor: Colors.grey,
+                    textColor: Theme.of(context).accentColor,
+                  ),
+                  FlatButton.icon(
+                    onPressed: () {}, 
+                    icon: Icon(Icons.add),
+                    label: Text('btn'),
+                    splashColor: Colors.grey,
+                    textColor: Theme.of(context).accentColor,
+                  ),
+              ],
+            );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ButtonDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  FlatButton(
+                    onPressed: () {}, 
+                    child: Text('FlatBtn'),
+                    splashColor: Colors.grey,
+                    textColor: Theme.of(context).accentColor,
+                  ),
+                  FlatButton.icon(
+                    onPressed: () {}, 
+                    icon: Icon(Icons.add),
+                    label: Text('btn'),
+                    splashColor: Colors.grey,
+                    textColor: Theme.of(context).accentColor,
+                  ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _WidgetDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('_WidgetDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
