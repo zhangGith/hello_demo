@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
         highlightColor: Colors.white,
         splashColor: Colors.white70,
+        accentColor: Color.fromRGBO(20, 30, 40, 1.0),
       ),
     );
   }
