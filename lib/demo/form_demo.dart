@@ -13,11 +13,67 @@ class FormDemo extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFieldDemo(),
+              RegisterDemo(),
             ],
           ),
         ),
         ),
+    );
+  }
+}
+
+class RegisterDemo extends StatefulWidget {
+  @override
+  _RegisterDemoState createState() => _RegisterDemoState();
+}
+
+class _RegisterDemoState extends State<RegisterDemo> {
+
+  final _registerFormKey = GlobalKey<FormState>();
+  String username, password;
+
+  void _submitRegisterForm() {
+    _registerFormKey.currentState.save();
+    debugPrint('username: $username');
+    debugPrint('password: $password');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        key: _registerFormKey,
+
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'username',
+            ),
+            onSaved: (value) {
+              username = value;
+            },
+          ),
+           TextFormField(
+             obscureText: true, //密文
+            decoration: InputDecoration(
+              labelText: 'password',
+            ),
+            onSaved: (value) {
+              password = value;
+            },
+          ),
+          SizedBox(height: 32.0),
+          Container(
+            width: double.infinity,
+            child: RaisedButton(
+              onPressed: _submitRegisterForm,
+              color: Theme.of(context).accentColor,
+              child: Text('Register', style: TextStyle(color: Colors.white)),
+              elevation: 0.0,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
