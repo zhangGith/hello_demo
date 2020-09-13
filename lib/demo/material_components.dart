@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-
+import './pop_demo.dart';
 class MaterailComponents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,6 +11,7 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+            ListItem(title: 'PopDemo', page: PopupMenuDemo(),),
             ListItem(title: 'ButtonDemo', page: ButtonDemo(),),
             ListItem(title: 'floatRaisedBtn', page: FloatRaisedBtn(),),
         ],
@@ -230,48 +231,12 @@ class ButtonDemo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Theme(
-                  data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
-                      padding: EdgeInsets.symmetric(horizontal: 32.0),
-                    ),
-                  ), 
-                child: ButtonBar(
-                  children: <Widget>[
-                    OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                    OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                  ],
-                ),
-                ),
-              ],
-            ),
+            _flatBtnDemo,
+            _raisedBtnDemo,
+            _outlineBtnDemo,
+            _containerDemo,
+            _expandDemo,
+            _buttonBarDemo,
           ],
         ),
       ),
