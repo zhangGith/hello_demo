@@ -56,18 +56,21 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                  FlatButton(
+                  RaisedButton(
                     onPressed: () {}, 
                     child: Text('FlatBtn'),
                     splashColor: Colors.grey,
                     textColor: Theme.of(context).accentColor,
+                    elevation: 0.0,
                   ),
-                  FlatButton.icon(
+                  SizedBox(width: 20.0),
+                  RaisedButton.icon(
                     onPressed: () {}, 
                     icon: Icon(Icons.add),
                     label: Text('btn'),
                     splashColor: Colors.grey,
                     textColor: Theme.of(context).accentColor,
+                    elevation: 10.0,
                   ),
               ],
             ),
