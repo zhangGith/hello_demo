@@ -118,31 +118,12 @@ class ButtonDemo extends StatelessWidget {
               ],
             );
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ButtonDemo'),
-        elevation: 0.0,
-      ),
-      body: Container(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
+    final Widget _containerDemo = Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                  Theme(
-                    data: Theme.of(context).copyWith(
-                      buttonColor: Theme.of(context).accentColor,
-                      buttonTheme: ButtonThemeData(
-                          textTheme: ButtonTextTheme.primary,
-                          // shape: BeveledRectangleBorder(
-                          //   borderRadius: BorderRadius.circular(30.0),
-                          // ),
-                          shape: StadiumBorder(),
-                      ),
-                    ), 
-                    child: OutlineButton(
+                Container(
+                  width: 160.0,
+                  child: OutlineButton(
                       onPressed: () {}, 
                       child: Text('FlatBtn'),
                       splashColor: Colors.grey[100],
@@ -156,13 +137,37 @@ class ButtonDemo extends StatelessWidget {
                       // textTheme: ButtonTextTheme.primary,
                     ),
                   ),
-                  SizedBox(width: 20.0),
-                  OutlineButton.icon(
-                    onPressed: () {}, 
-                    icon: Icon(Icons.add),
-                    label: Text('btn'),
-                    splashColor: Colors.grey,
-                    textColor: Theme.of(context).accentColor,
+              ],
+            );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ButtonDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 160.0,
+                  child: OutlineButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                    ),
                   ),
               ],
             ),
