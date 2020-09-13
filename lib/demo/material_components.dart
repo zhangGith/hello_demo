@@ -24,7 +24,7 @@ class ButtonDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final Widget flatBtnDemo = Row(
+    final Widget _flatBtnDemo = Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                   FlatButton(
@@ -34,6 +34,81 @@ class ButtonDemo extends StatelessWidget {
                     textColor: Theme.of(context).accentColor,
                   ),
                   FlatButton.icon(
+                    onPressed: () {}, 
+                    icon: Icon(Icons.add),
+                    label: Text('btn'),
+                    splashColor: Colors.grey,
+                    textColor: Theme.of(context).accentColor,
+                  ),
+              ],
+            );
+
+    final Widget _raisedBtnDemo = Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  Theme(
+                    data: Theme.of(context).copyWith(
+                      buttonColor: Theme.of(context).accentColor,
+                      buttonTheme: ButtonThemeData(
+                          textTheme: ButtonTextTheme.primary,
+                          // shape: BeveledRectangleBorder(
+                          //   borderRadius: BorderRadius.circular(30.0),
+                          // ),
+                          shape: StadiumBorder(),
+                      ),
+                    ), 
+                    child: RaisedButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                      elevation: 0.0,
+                    ),
+                  ),
+                  SizedBox(width: 20.0),
+                  RaisedButton.icon(
+                    onPressed: () {}, 
+                    icon: Icon(Icons.add),
+                    label: Text('btn'),
+                    splashColor: Colors.grey,
+                    textColor: Theme.of(context).accentColor,
+                    elevation: 10.0,
+                  ),
+              ],
+            );
+
+    final Widget _outlineBtnDemo = Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  Theme(
+                    data: Theme.of(context).copyWith(
+                      buttonColor: Theme.of(context).accentColor,
+                      buttonTheme: ButtonThemeData(
+                          textTheme: ButtonTextTheme.primary,
+                          // shape: BeveledRectangleBorder(
+                          //   borderRadius: BorderRadius.circular(30.0),
+                          // ),
+                          shape: StadiumBorder(),
+                      ),
+                    ), 
+                    child: OutlineButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                    ),
+                  ),
+                  SizedBox(width: 20.0),
+                  OutlineButton.icon(
                     onPressed: () {}, 
                     icon: Icon(Icons.add),
                     label: Text('btn'),
@@ -67,24 +142,27 @@ class ButtonDemo extends StatelessWidget {
                           shape: StadiumBorder(),
                       ),
                     ), 
-                    child: RaisedButton(
+                    child: OutlineButton(
                       onPressed: () {}, 
                       child: Text('FlatBtn'),
-                      splashColor: Colors.grey,
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
                       // color: Theme.of(context).accentColor,
                       // textColor: Colors.white,
                       // textTheme: ButtonTextTheme.primary,
-                      elevation: 0.0,
                     ),
                   ),
                   SizedBox(width: 20.0),
-                  RaisedButton.icon(
+                  OutlineButton.icon(
                     onPressed: () {}, 
                     icon: Icon(Icons.add),
                     label: Text('btn'),
                     splashColor: Colors.grey,
                     textColor: Theme.of(context).accentColor,
-                    elevation: 10.0,
                   ),
               ],
             ),
