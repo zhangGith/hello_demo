@@ -139,6 +139,43 @@ class ButtonDemo extends StatelessWidget {
                   ),
               ],
             );
+    final Widget _expandDemo = Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: OutlineButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                    ),
+                  ),
+                  SizedBox(width:20.0),
+                  Expanded(
+                    flex: 2,
+                  child: OutlineButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                    ),
+                  ),
+              ],
+            );
 
     return Scaffold(
       appBar: AppBar(
@@ -153,8 +190,24 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 160.0,
+                Expanded(
+                  child: OutlineButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                    ),
+                  ),
+                  SizedBox(width:20.0),
+                  Expanded(
+                    flex: 2,
                   child: OutlineButton(
                       onPressed: () {}, 
                       child: Text('FlatBtn'),
