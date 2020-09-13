@@ -28,12 +28,33 @@ class TextFieldDemo extends StatefulWidget {
 }
 
 class _TextFieldDemoState extends State<TextFieldDemo> {
+
+  final _textController = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _textController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _textController.addListener(() {
+      debugPrint('input: ${_textController.text}');
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextField(
-      onChanged: (value) {
-        debugPrint('changed: $value');
-      },
+      controller: _textController,
+      // onChanged: (value) {
+      //   debugPrint('changed: $value');
+      // },
       onSubmitted: (value) {
         debugPrint('submitt: $value');
       },
