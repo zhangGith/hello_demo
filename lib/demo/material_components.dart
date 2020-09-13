@@ -177,6 +177,49 @@ class ButtonDemo extends StatelessWidget {
               ],
             );
 
+    final Widget _buttonBarDemo = Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    buttonTheme: ButtonThemeData(
+                      padding: EdgeInsets.symmetric(horizontal: 32.0),
+                    ),
+                  ), 
+                child: ButtonBar(
+                  children: <Widget>[
+                    OutlineButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                    ),
+                    OutlineButton(
+                      onPressed: () {}, 
+                      child: Text('FlatBtn'),
+                      splashColor: Colors.grey[100],
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      textColor: Colors.black,
+                      highlightedBorderColor: Colors.grey,
+                      // color: Theme.of(context).accentColor,
+                      // textColor: Colors.white,
+                      // textTheme: ButtonTextTheme.primary,
+                    ),
+                  ],
+                ),
+                ),
+              ],
+            );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -190,8 +233,15 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: OutlineButton(
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    buttonTheme: ButtonThemeData(
+                      padding: EdgeInsets.symmetric(horizontal: 32.0),
+                    ),
+                  ), 
+                child: ButtonBar(
+                  children: <Widget>[
+                    OutlineButton(
                       onPressed: () {}, 
                       child: Text('FlatBtn'),
                       splashColor: Colors.grey[100],
@@ -204,11 +254,7 @@ class ButtonDemo extends StatelessWidget {
                       // textColor: Colors.white,
                       // textTheme: ButtonTextTheme.primary,
                     ),
-                  ),
-                  SizedBox(width:20.0),
-                  Expanded(
-                    flex: 2,
-                  child: OutlineButton(
+                    OutlineButton(
                       onPressed: () {}, 
                       child: Text('FlatBtn'),
                       splashColor: Colors.grey[100],
@@ -221,7 +267,9 @@ class ButtonDemo extends StatelessWidget {
                       // textColor: Colors.white,
                       // textTheme: ButtonTextTheme.primary,
                     ),
-                  ),
+                  ],
+                ),
+                ),
               ],
             ),
           ],
