@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:hello_demo/demo/radio_demo.dart';
 import './pop_demo.dart';
 import './form_demo.dart';
 import './check_box_demo.dart';
@@ -14,8 +15,9 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-             ListItem(title: 'CheckBox', page: CheckBoxDemo(),),
-             ListItem(title: 'Form', page: FormDemo(),),
+            ListItem(title: 'Radio', page: RadioDemo(),),
+            ListItem(title: 'CheckBox', page: CheckBoxDemo(),),
+            ListItem(title: 'Form', page: FormDemo(),),
             ListItem(title: 'PopDemo', page: PopupMenuDemo(),),
             ListItem(title: 'ButtonDemo', page: ButtonDemo(),),
             ListItem(title: 'floatRaisedBtn', page: FloatRaisedBtn(),),
