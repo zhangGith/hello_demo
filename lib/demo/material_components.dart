@@ -4,6 +4,7 @@ import 'package:hello_demo/demo/radio_demo.dart';
 import './pop_demo.dart';
 import './form_demo.dart';
 import './check_box_demo.dart';
+import './switch_demo.dart';
 
 class MaterailComponents extends StatelessWidget {
   @override
@@ -15,6 +16,7 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+            ListItem(title: 'Switch', page: SwitchDmeo(),),
             ListItem(title: 'Radio', page: RadioDemo(),),
             ListItem(title: 'CheckBox', page: CheckBoxDemo(),),
             ListItem(title: 'Form', page: FormDemo(),),
