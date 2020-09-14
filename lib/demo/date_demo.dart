@@ -22,6 +22,12 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
 
   }
 
+  TimeOfDay selectedTime = TimeOfDay(hour: 8, minute: 30);
+
+  _selectTime() async {
+    final TimeOfDay time = await showTimePicker(context: context, initialTime: selectedTime);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +48,15 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
                     child: Row(
                       children: <Widget>[
                         Text(DateFormat.yMMMMd().format(selectDateTime)),
+                        Icon(Icons.arrow_drop_down),
+                      ],
+                    ),
+                  ),
+                  InkWell(
+                    onTap: _selectTime,
+                    child: Row(
+                      children: <Widget>[
+                        Text(selectedTime.format(context)),
                         Icon(Icons.arrow_drop_down),
                       ],
                     ),
