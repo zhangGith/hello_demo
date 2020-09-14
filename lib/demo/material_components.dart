@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import './pop_demo.dart';
 import './form_demo.dart';
+import './check_box_demo.dart';
+
 class MaterailComponents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,7 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+             ListItem(title: 'CheckBox', page: CheckBoxDemo(),),
              ListItem(title: 'Form', page: FormDemo(),),
             ListItem(title: 'PopDemo', page: PopupMenuDemo(),),
             ListItem(title: 'ButtonDemo', page: ButtonDemo(),),
