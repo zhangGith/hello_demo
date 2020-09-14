@@ -27,21 +27,41 @@ class _RadioDemoState extends State<RadioDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            RadioListTile(
+              value: 0, 
+              groupValue: _radioValue, 
+              onChanged: _radioHandler,
+              title: Text('A'),
+              subtitle: Text('a des'),
+              activeColor: Colors.black,
+              secondary: Icon(Icons.filter_1),
+              selected: _radioValue == 0,
+            ),
+            RadioListTile(
+              value: 1, 
+              groupValue: _radioValue, 
+              onChanged: _radioHandler,
+              title: Text('A'),
+              subtitle: Text('a des'),
+              activeColor: Colors.black,
+              secondary: Icon(Icons.filter_2),
+              selected: _radioValue == 1,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                  Radio(
-                    value: 0, 
-                    groupValue: _radioValue, 
-                    onChanged: _radioHandler,
-                    activeColor: Colors.black,
-                  ),
-                  Radio(
-                    value: 1, 
-                    groupValue: _radioValue, 
-                    onChanged: _radioHandler,
-                    activeColor: Colors.black,
-                  ),
+                  // Radio(
+                  //   value: 0, 
+                  //   groupValue: _radioValue, 
+                  //   onChanged: _radioHandler,
+                  //   activeColor: Colors.black,
+                  // ),
+                  // Radio(
+                  //   value: 1, 
+                  //   groupValue: _radioValue, 
+                  //   onChanged: _radioHandler,
+                  //   activeColor: Colors.black,
+                  // ),
               ],
             ),
           ],
