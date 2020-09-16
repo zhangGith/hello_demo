@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class BottomSheetDemo extends StatefulWidget {
   @override
@@ -31,21 +32,22 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
     });
   } 
 
-  _openBottomSheetTitle() {
-      showModalBottomSheet(context: context, 
+  Future _openBottomSheetTitle() async {
+      final option = await showModalBottomSheet(context: context, 
       builder: (context) {
         return Container(
             height: 200.0,
             child: Column(
               children: <Widget>[
-                ListTile(title: Text('option a'),),
-                ListTile(title: Text('option a'),),
-                ListTile(title: Text('option a'),),
+                ListTile(title: Text('option a'), onTap: (){ Navigator.pop(context, 'A'); },),
+                ListTile(title: Text('option b'), onTap: (){ Navigator.pop(context, 'B'); },),
+                ListTile(title: Text('option c'), onTap: (){ Navigator.pop(context, 'C'); },),
               ],
             ),
         );
       }
     );
+    print(option);
   }
 
   @override
