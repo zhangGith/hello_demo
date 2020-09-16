@@ -13,7 +13,26 @@ class _SimpleDialogDemoState extends State<SimpleDialogDemo> {
       builder: (context) {
         return SimpleDialog(
           title: Text("simple"),
-          children: [],
+          children: [
+            SimpleDialogOption(
+              child: Text('a'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            SimpleDialogOption(
+              child: Text('a'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            SimpleDialogOption(
+              child: Text('a'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
         );
       },
     );

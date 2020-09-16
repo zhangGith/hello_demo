@@ -7,6 +7,7 @@ import './check_box_demo.dart';
 import './switch_demo.dart';
 import './slider_demo.dart';
 import './date_demo.dart';
+import './simple_dialog_demo.dart';
 
 class MaterailComponents extends StatelessWidget {
   @override
@@ -18,6 +19,7 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+            ListItem(title: 'simpleDialog', page: SimpleDialogDemo(),),
             ListItem(title: 'DateTime', page: DateTimeDemo(),),
             ListItem(title: 'Slider', page: SliderDemo(),),
             ListItem(title: 'Switch', page: SwitchDmeo(),),
