@@ -8,6 +8,7 @@ class BottomSheetDemo extends StatefulWidget {
 class _BottomSheetDemoState extends State<BottomSheetDemo> {
 
   final _bottomSheetStyleKey = GlobalKey<ScaffoldState>();
+
   _openBottomSheet() {
     _bottomSheetStyleKey
     .currentState
@@ -30,6 +31,23 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
     });
   } 
 
+  _openBottomSheetTitle() {
+      showModalBottomSheet(context: context, 
+      builder: (context) {
+        return Container(
+            height: 200.0,
+            child: Column(
+              children: <Widget>[
+                ListTile(title: Text('option a'),),
+                ListTile(title: Text('option a'),),
+                ListTile(title: Text('option a'),),
+              ],
+            ),
+        );
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +67,9 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
                 RaisedButton(
                   onPressed: _openBottomSheet,
                   child: Text('open bottom sheet dialog'),
+                ),
+                FlatButton(onPressed: _openBottomSheetTitle, 
+                  child: Text('open sheet title'),
                 ),
               ],
             ),
