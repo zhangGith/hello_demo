@@ -6,6 +6,8 @@ class ExpansionPanelDemo extends StatefulWidget {
 }
 
 class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
+
+  bool _isExpansion = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +20,12 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-         
                 ExpansionPanelList(
+                  expansionCallback: (int index, bool isExpaned) {
+                    setState(() {
+                      _isExpansion = !isExpaned;
+                    });
+                  },
                   children: [
                     ExpansionPanel(
                       headerBuilder: (BuildContext context, bool isExpanded) {
@@ -33,11 +39,10 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
                         width: double.infinity,
                         child: Text('ddalelefnei ene'),
                       ),
-                      isExpanded: true,
+                      isExpanded: _isExpansion,
                     ),
                   ],
                 ),
-                  
           ],
         ),
       ),
