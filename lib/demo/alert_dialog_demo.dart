@@ -9,6 +9,7 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
 
   _openAlertDialog() {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
