@@ -9,6 +9,7 @@ import './slider_demo.dart';
 import './date_demo.dart';
 import './simple_dialog_demo.dart';
 import './alert_dialog_demo.dart';
+import './bottom_sheet_demo.dart';
 
 class MaterailComponents extends StatelessWidget {
   @override
@@ -20,6 +21,7 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'bottomSheetDialog', page: BottomSheetDemo(),),
           ListItem(title: 'alertdialog', page: AlertDialogDemo(),),
           ListItem(title: 'simpleDialog', page: SimpleDialogDemo(),),
           ListItem(title: 'DateTime', page: DateTimeDemo(),),
