@@ -26,6 +26,13 @@ class _ChipDemoState extends State<ChipDemo> {
                 Chip(label: Text('ddfefddfefddfefddfefddfef'), backgroundColor: Colors.yellow),
                 Chip(label: Text('data'), avatar: CircleAvatar(backgroundColor: Colors.grey, child: Text('D')),),
                 Chip(label: Text('ddfff'), avatar: CircleAvatar(backgroundImage: NetworkImage('https://pic4.zhimg.com/v2-3be05963f5f3753a8cb75b6692154d4a_1200x500.jpg'),),),
+                Chip(
+                  label: Text('dddd'),
+                  onDeleted: () {},
+                  deleteIconColor: Colors.red,
+                  deleteIcon: Icon(Icons.delete),
+                  deleteButtonTooltipMessage: 'remove this chip',
+                ),
                 Divider(color: Colors.grey, height: 32.0),
               ],
             ),
