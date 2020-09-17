@@ -18,15 +18,13 @@ class _ChipDemoState extends State<ChipDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              spacing: 8.0,
+              runSpacing: 10.0,
               children: [
                 Chip(label: Text('adf')),
-                SizedBox(width: 8.0),
-                Chip(label: Text('ddfef'), backgroundColor: Colors.yellow),
-                SizedBox(width: 8.0),
+                Chip(label: Text('ddfefddfefddfefddfefddfef'), backgroundColor: Colors.yellow),
                 Chip(label: Text('data'), avatar: CircleAvatar(backgroundColor: Colors.grey, child: Text('D')),),
-                SizedBox(width: 8.0),
                 Chip(label: Text('ddfff'), avatar: CircleAvatar(backgroundImage: NetworkImage('https://pic4.zhimg.com/v2-3be05963f5f3753a8cb75b6692154d4a_1200x500.jpg'),),),
               ],
             ),
