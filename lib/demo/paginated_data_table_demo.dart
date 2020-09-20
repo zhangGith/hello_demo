@@ -29,7 +29,21 @@ class PostDataSource extends DataTableSource {
       ],
     );
 
+  }
 
+  void _sort(getField(post), bool ascending) {
+    _posts.sort( (a, b) {
+      if (!ascending) {
+        final c = a;
+        a = b;
+        b = c;
+      }
+      final avalue = getField(a);
+      final bvalue = getField(b);
+      return Comparable.compare(avalue, bvalue);
+    });
+
+    notifyListeners();
   }
 
 }
@@ -67,18 +81,13 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
                 DataColumn(
                   label: Text('code'),
                   onSort: (columnIndex, ascending) {
+
+                    _postDataSource._sort((post) => post.title.length, ascending);
+
                     setState(() {
                       _sortAscending = ascending;
                       _sortColumnIndex = columnIndex;
 
-                      posts.sort((a, b) {
-                        if (!ascending) {
-                          final c = a;
-                          a = b;
-                          b = c;
-                        }
-                        return a.title.length.compareTo(b.title.length);
-                      });
                     });
                   },
                 ),
