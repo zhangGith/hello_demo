@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // import 'package:hello_demo/demo/date_table_demo.dart';
 import 'package:hello_demo/demo/radio_demo.dart';
+import 'package:hello_demo/demo/steper_demo.dart';
 import './pop_demo.dart';
 import './form_demo.dart';
 import './check_box_demo.dart';
@@ -28,6 +29,7 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'steper', page: SteperDemo(),),
           ListItem(title: 'card', page: CardDemo(),),
           ListItem(title: 'pageinated table', page: PaginatedDataTableDemo(),),
           ListItem(title: 'dataTable', page: DataTableDemo(),),
