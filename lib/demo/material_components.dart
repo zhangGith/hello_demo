@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+// import 'package:hello_demo/demo/date_table_demo.dart';
 import 'package:hello_demo/demo/radio_demo.dart';
 import './pop_demo.dart';
 import './form_demo.dart';
@@ -13,6 +14,7 @@ import './bottom_sheet_demo.dart';
 import './snack_bar_demo.dart';
 import './expansion_panel_demo.dart';
 import './chip_demo.dart';
+import './data_table_demo.dart';
 
 class MaterailComponents extends StatelessWidget {
   @override
@@ -24,13 +26,14 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'dataTable', page: DataTableDemo(),),
           ListItem(title: 'Chip', page: ChipDemo(),),
           ListItem(title: 'expansion panel', page: ExpansionPanelDemo(),),
           ListItem(title: 'snack bar', page: SnackBarDemo(),),
           ListItem(title: 'bottomSheetDialog', page: BottomSheetDemo(),),
           ListItem(title: 'alertdialog', page: AlertDialogDemo(),),
           ListItem(title: 'simpleDialog', page: SimpleDialogDemo(),),
-          ListItem(title: 'DateTime', page: DateTimeDemo(),),
+          // ListItem(title: 'DateTime', page: DateTimeDemo(),),
           ListItem(title: 'Slider', page: SliderDemo(),),
           ListItem(title: 'Switch', page: SwitchDmeo(),),
           ListItem(title: 'Radio', page: RadioDemo(),),
