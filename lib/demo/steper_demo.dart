@@ -6,6 +6,9 @@ class SteperDemo extends StatefulWidget {
 }
 
 class _SteperDemoState extends State<SteperDemo> {
+
+  int _currentStep = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,23 +25,40 @@ class _SteperDemoState extends State<SteperDemo> {
               data: Theme.of(context).copyWith(
                 primaryColor: Colors.black,
               ), 
-              child: Stepper(steps: [
+              child: Stepper(
+                currentStep: _currentStep,
+                onStepTapped: (value) {
+                    setState(() {
+                      _currentStep = value;
+                    });
+                },
+                onStepCancel: () {
+                  setState(() {
+                    _currentStep > 0 ? _currentStep -= 1 : _currentStep = 0;
+                  });
+                },
+                onStepContinue: () {
+                  setState(() {
+                    _currentStep < 2 ? _currentStep += 1 : _currentStep = 0;
+                  });
+                },
+                steps: [
                 Step(
                   title: Text('login'), 
                   content: Text('content1'),
                   subtitle: Text('addd'),
-                  isActive: true,
+                  isActive: _currentStep == 0,
                 ),
                 Step(
                   title: Text('login'), 
                   content: Text('content1'),
                   subtitle: Text('addd'),
-                  isActive: false,
+                  isActive: _currentStep == 1,
                 ),Step(
                   title: Text('login'), 
                   content: Text('content1'),
                   subtitle: Text('addd'),
-                  isActive: false,
+                  isActive: _currentStep == 2,
                 ),
               ]),
               ),
