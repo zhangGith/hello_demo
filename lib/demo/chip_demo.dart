@@ -10,6 +10,7 @@ class _ChipDemoState extends State<ChipDemo> {
   List<String> _tags = ['a', 'b', 'c'];
   String _action = 'no things';
   List<String> _select = [];
+  String _choice = 'lemon';
 
   @override
   Widget build(BuildContext context) {
@@ -94,6 +95,26 @@ class _ChipDemoState extends State<ChipDemo> {
                     );
                   }).toList(),
                 ),
+
+                Divider(color: Colors.grey, height: 32.0),
+                Container(
+                  width: double.infinity,
+                  child: Text('choice chip : ${_choice.toString()}'),
+                ),
+                Wrap(
+                  spacing: 8.0,
+                  children: _tags.map((tag) {
+                    return ChoiceChip(
+                      label: Text(tag), 
+                      selected: _choice.contains(tag),
+                      onSelected: (value) {
+                        setState(() {
+                          _choice = tag;
+                        });
+                      },
+                    );
+                  }).toList(),
+                ),
               ],
             ),
           ],
@@ -105,6 +126,7 @@ class _ChipDemoState extends State<ChipDemo> {
           setState(() {
             _tags = ['a', 'b', 'c'];
             _select = [];
+            _choice = 'lemon';
           });
         },
       ),
