@@ -21,7 +21,10 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _count +=1;
+          setState(() {
+            _count +=1;
+          });
+          print(_count);
         },
         child: Icon(Icons.add),
       ),
