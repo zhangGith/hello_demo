@@ -23,6 +23,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
 
   StreamSubscription _streamSubscription;
   StreamController<String> _streamDemo;
+  StreamSink _sinkDemo;
 
   @override
   void dispose() {
@@ -38,6 +39,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     print('stream begin');
     // Stream<String> _streamDemo = Stream.fromFuture(fetchData());
     _streamDemo = StreamController<String>();
+    _sinkDemo = _streamDemo.sink;
     print('stream listen');
     _streamSubscription = _streamDemo.stream.listen(onData, onError: onError);
     print('stream init');
@@ -78,7 +80,8 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   void _addStream() async {
     print('stream controller add');
     String data = await fetchData();
-    _streamDemo.add(data);
+    // _streamDemo.add(data);
+    _sinkDemo.add(data);
   }
 
   @override
