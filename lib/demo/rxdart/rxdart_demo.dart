@@ -22,10 +22,9 @@ class RxDartDemoHome extends StatefulWidget {
 
 class _RxDartDemoHomeState extends State<RxDartDemoHome> {
   @override
-  Future<void> initState() async {
+  void initState() {
     // TODO: implement initState
     super.initState();
-
     // Observable<String> _observable =
     //     // Observable(Stream.fromIterable(['hello ~', '您好']));
     //     // Observable.fromFuture(Future.value('hello~'));
