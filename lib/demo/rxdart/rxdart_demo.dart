@@ -35,11 +35,12 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
     // _observable.listen(print);
 
     PublishSubject<String> _subject = PublishSubject<String>();
-    _subject.listen(data) => print('listen 1 : $data');
+    _subject.listen((data) => print('listen 1 : $data'));
     _subject.add('hello');
-    _subject.listen((data) => print('listen 2 : $data');
+    _subject.listen((data) => print('listen 2 : $data'));
+
     _subject.add('hola');
-;  }
+  }
 
   @override
   Widget build(BuildContext context) {
