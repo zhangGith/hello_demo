@@ -28,7 +28,9 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
     super.initState();
 
     _textFieldSubject = PublishSubject<String>();
-    _textFieldSubject.listen((data) => print('text: $data'));
+    _textFieldSubject
+        .map((event) => 'item: $event')
+        .listen((data) => print('text: $data'));
     _textFieldSubject.close();
 
     // Observable<String> _observable =
