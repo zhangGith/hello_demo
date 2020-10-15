@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_demo/demo/rxdart/rxdart_demo.dart';
 import 'package:hello_demo/demo/state/state_management.dart';
 import 'package:hello_demo/demo/stream/stream_demo.dart';
 import './model/post.dart';
@@ -14,6 +15,7 @@ import './demo/form_demo.dart';
 import './demo/material_components.dart';
 import './demo/state/state_management.dart';
 import './demo/stream/stream_demo.dart';
+import './demo/rxdart/rxdart_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/stream',
+      initialRoute: '/rxdart',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo(title: 'about'),
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/mdc': (context) => MaterailComponents(),
         '/state-management': (context) => StateManagementDemo(),
         '/stream': (context) => StreamDemo(),
+        '/rxdart': (context) => RxDartDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
@@ -44,64 +47,54 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4, 
+      length: 4,
       child: Scaffold(
-          backgroundColor: Colors.grey[100],
-          appBar: AppBar(
-            elevation: 0.0,
-            leading: IconButton(
-              icon: Icon(Icons.menu), 
-              tooltip: 'menu show',
-              onPressed: () => debugPrint('menu'),
-              ),
-
-              actions: [
-                IconButton(
-                  icon: Icon(Icons.search), 
-                  tooltip: 'Search',
-                  onPressed: () => debugPrint('Search'),
-                ),
-                IconButton(
-                  icon: Icon(Icons.more_horiz), 
-                  tooltip: 'more_horiz',
-                  onPressed: () => debugPrint('more_horiz'),
-                ),
-              ],
-
-              title: Text('ni hao'.toUpperCase()),
-
-              bottom: TabBar(
-                unselectedLabelColor: Colors.black38,
-                indicatorColor: Colors.black54,
-                indicatorSize: TabBarIndicatorSize.label,
-                indicatorWeight: 1.0,
-              
-                tabs: <Widget>[
-                  Tab(icon: Icon(Icons.local_florist)),
-                  Tab(icon: Icon(Icons.change_history)),
-                  Tab(icon: Icon(Icons.directions_bike)),
-                  Tab(icon: Icon(Icons.view_quilt)),
-                ]
-              ),
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          elevation: 0.0,
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'menu show',
+            onPressed: () => debugPrint('menu'),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              ListViewDemo(),
-              // Icon(Icons.change_history, size: 128.0, color: Colors.black12),
-              BasicDemo(),
-              LayoutDemo(),
-              SliverDemo(),
-            ]
-          ),
-          drawer: DrawerDemo(),
-          bottomNavigationBar: BottomNavigationBarDemo(),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: () => debugPrint('Search'),
+            ),
+            IconButton(
+              icon: Icon(Icons.more_horiz),
+              tooltip: 'more_horiz',
+              onPressed: () => debugPrint('more_horiz'),
+            ),
+          ],
+          title: Text('ni hao'.toUpperCase()),
+          bottom: TabBar(
+              unselectedLabelColor: Colors.black38,
+              indicatorColor: Colors.black54,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorWeight: 1.0,
+              tabs: <Widget>[
+                Tab(icon: Icon(Icons.local_florist)),
+                Tab(icon: Icon(Icons.change_history)),
+                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.view_quilt)),
+              ]),
         ),
-      );
+        body: TabBarView(children: <Widget>[
+          ListViewDemo(),
+          // Icon(Icons.change_history, size: 128.0, color: Colors.black12),
+          BasicDemo(),
+          LayoutDemo(),
+          SliverDemo(),
+        ]),
+        drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBarDemo(),
+      ),
+    );
   }
 }
-
-
