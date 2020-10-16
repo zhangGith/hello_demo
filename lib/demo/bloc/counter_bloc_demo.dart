@@ -7,12 +7,17 @@ class CounterHome extends StatelessWidget {
     CounterBloc _counterBloc = CounterProvider.of(context).bloc;
 
     return Center(
-      child: ActionChip(
-        label: Text('0'),
-        onPressed: () {
-          _counterBloc.log();
-        },
-      ),
+      child: StreamBuilder<Object>(
+          initialData: 0,
+          stream: _counterBloc.count,
+          builder: (context, snapshot) {
+            return ActionChip(
+              label: Text('${snapshot.data}'),
+              onPressed: () {
+                _counterBloc.log();
+              },
+            );
+          }),
     );
   }
 }
@@ -56,15 +61,27 @@ class CounterBloc {
   final _counterActionController = StreamController<int>();
   StreamSink<int> get counter => _counterActionController.sink;
 
+  final _counterController = StreamController<int>();
+  Stream<int> get count => _counterController.stream;
+
+  int _count = 0;
+
   CounterBloc() {
     _counterActionController.stream.listen(onData);
   }
 
   void onData(int data) {
     print('stream: $data');
+    _count = data + _count;
+    _counterController.add(_count);
   }
 
   void log() {
     print('bloc');
+  }
+
+  void dispose() {
+    _counterActionController.close();
+    _counterController.close();
   }
 }
