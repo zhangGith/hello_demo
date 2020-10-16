@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class CounterHome extends StatelessWidget {
@@ -24,8 +25,8 @@ class CounterActionButton extends StatelessWidget {
     return FloatingActionButton(
       child: Icon(Icons.add),
       onPressed: () {
-        print('object');
-        _counterBloc.log();
+        // _counterBloc.log();
+        _counterBloc.counter.add(1);
       },
     );
   }
@@ -52,6 +53,17 @@ class CounterProvider extends InheritedWidget {
 }
 
 class CounterBloc {
+  final _counterActionController = StreamController<int>();
+  StreamSink<int> get counter => _counterActionController.sink;
+
+  CounterBloc() {
+    _counterActionController.stream.listen(onData);
+  }
+
+  void onData(int data) {
+    print('stream: $data');
+  }
+
   void log() {
     print('bloc');
   }
