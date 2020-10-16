@@ -66,21 +66,40 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: IconButton(
-        icon: Icon(Icons.favorite),
-        iconSize: animation.value,
-        color: animationColor.value,
-        onPressed: () {
-          // animationDemoController.forward();
-          switch (animationDemoController.status) {
-            case AnimationStatus.completed:
-              animationDemoController.reverse();
-              break;
-            default:
-              animationDemoController.forward();
-          }
-        },
+      child: AnimatedHeart(
+        animations: [animation, animationColor],
+        controller: animationDemoController,
       ),
+    );
+  }
+}
+
+class AnimatedHeart extends AnimatedWidget {
+  final List animations;
+  final AnimationController controller;
+
+  AnimatedHeart({
+    this.animations,
+    this.controller,
+  }) : super(listenable: controller);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return IconButton(
+      icon: Icon(Icons.favorite),
+      iconSize: animations[0].value,
+      color: animations[1].value,
+      onPressed: () {
+        // animationDemoController.forward();
+        switch (controller.status) {
+          case AnimationStatus.completed:
+            controller.reverse();
+            break;
+          default:
+            controller.forward();
+        }
+      },
     );
   }
 }
