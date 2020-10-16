@@ -8,6 +8,7 @@ class AnimationDemo extends StatelessWidget {
         title: Text('AnimationDemo'),
         elevation: 0.0,
       ),
+      body: AnimationDemoHome(),
     );
   }
 }
@@ -34,6 +35,16 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
     animationDemoController.addListener(() {
       print('${animationDemoController.value}');
     });
+
+    //开始播放动画
+    animationDemoController.forward();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    animationDemoController.dispose();
   }
 
   @override
