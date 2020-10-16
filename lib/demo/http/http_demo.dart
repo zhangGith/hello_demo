@@ -27,7 +27,7 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchData().then((value) => print(value));
+    // fetchData().then((value) => print(value));
 /*
     final post = {
       'title': 'hello',
@@ -51,7 +51,7 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
     */
   }
 
-  Future<List<Post>> fetchData() async {
+  Future<List<Post>> fetchPosts() async {
     final response =
         await http.get('https://resources.ninghao.net/demo/posts.json');
     // print('status: ${response.statusCode}');
@@ -68,7 +68,28 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return FutureBuilder(
+      future: fetchPosts(),
+      builder: (context, snapshot) {
+        print('data : ${snapshot.data}');
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(
+            child: Text('waiting...'),
+          );
+        }
+        return ListView(
+          children: snapshot.data.map<Widget>((item) {
+            return ListTile(
+              title: Text(item.title),
+              subtitle: Text(item.author),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(item.imageUrl),
+              ),
+            );
+          }).toList(),
+        );
+      },
+    );
   }
 }
 
