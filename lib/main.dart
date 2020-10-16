@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_demo/demo/http/http_demo.dart';
 import 'package:hello_demo/demo/rxdart/rxdart_demo.dart';
 import 'package:hello_demo/demo/state/state_management.dart';
 import 'package:hello_demo/demo/stream/stream_demo.dart';
@@ -17,6 +18,7 @@ import './demo/state/state_management.dart';
 import './demo/stream/stream_demo.dart';
 import './demo/rxdart/rxdart_demo.dart';
 import './demo/bloc/block_demo.dart';
+import './demo/http/http_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/bloc',
+      initialRoute: '/http',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo(title: 'about'),
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/stream': (context) => StreamDemo(),
         '/rxdart': (context) => RxDartDemo(),
         '/bloc': (context) => BlocDemo(),
+        '/http': (context) => HttpDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
