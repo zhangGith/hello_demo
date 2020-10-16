@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_demo/demo/animation/animation_demo.dart';
 import 'package:hello_demo/demo/http/http_demo.dart';
 import 'package:hello_demo/demo/rxdart/rxdart_demo.dart';
 import 'package:hello_demo/demo/state/state_management.dart';
@@ -19,6 +20,7 @@ import './demo/stream/stream_demo.dart';
 import './demo/rxdart/rxdart_demo.dart';
 import './demo/bloc/block_demo.dart';
 import './demo/http/http_demo.dart';
+import './demo/animation/animation_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/rxdart': (context) => RxDartDemo(),
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
+        '/animation': (context) => AnimationDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
