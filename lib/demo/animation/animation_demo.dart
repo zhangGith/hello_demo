@@ -29,7 +29,10 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
 
     animationDemoController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: 3000),
+      lowerBound: 0.0,
+      upperBound: 100.0,
+      value: 32.0,
     );
 
     animationDemoController.addListener(() {
