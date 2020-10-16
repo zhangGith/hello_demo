@@ -27,8 +27,8 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // fetchData();
-
+    fetchData().then((value) => print(value));
+/*
     final post = {
       'title': 'hello',
       'description': 'nice to meet you',
@@ -48,12 +48,22 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
 
     final toPostJson = postModel.toJson();
     print(toPostJson);
+    */
   }
 
-  void fetchData() async {
+  Future<List<Post>> fetchData() async {
     final response =
         await http.get('https://resources.ninghao.net/demo/posts.json');
-    print('status: ${response.statusCode}');
+    // print('status: ${response.statusCode}');
+    if (response.statusCode == 200) {
+      final responseBody = json.decode(response.body);
+      List<Post> posts = responseBody['posts']
+          .map<Post>((item) => Post.fromJson(item))
+          .toList();
+      return posts;
+    } else {
+      throw Exception('failed to fetch posts');
+    }
   }
 
   @override
@@ -63,20 +73,32 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
 }
 
 class Post {
+  final int id;
   final String title;
   final String description;
+  final String author;
+  final String imageUrl;
 
   Post(
+    this.id,
     this.title,
     this.description,
+    this.author,
+    this.imageUrl,
   );
 
   Post.fromJson(Map json)
-      : title = json['title'],
-        description = json['description'];
+      : id = json['id'],
+        title = json['title'],
+        description = json['description'],
+        author = json['author'],
+        imageUrl = json['imageUrl'];
 
   Map toJson() => {
+        'id': id,
         'title': title,
         'description': description,
+        'author': author,
+        'imageUrl': imageUrl,
       };
 }
