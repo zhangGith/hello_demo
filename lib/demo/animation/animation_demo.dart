@@ -30,17 +30,22 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
     animationDemoController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 3000),
-      lowerBound: 0.0,
+      lowerBound: 32.0,
       upperBound: 100.0,
       value: 32.0,
     );
 
     animationDemoController.addListener(() {
-      print('${animationDemoController.value}');
+      // print('${animationDemoController.value}');
+      setState(() {});
+    });
+
+    animationDemoController.addStatusListener((status) {
+      print(status);
     });
 
     //开始播放动画
-    animationDemoController.forward();
+    // animationDemoController.forward();
   }
 
   @override
@@ -52,6 +57,21 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: IconButton(
+        icon: Icon(Icons.favorite),
+        iconSize: animationDemoController.value,
+        onPressed: () {
+          // animationDemoController.forward();
+          switch (animationDemoController.status) {
+            case AnimationStatus.completed:
+              animationDemoController.reverse();
+              break;
+            default:
+              animationDemoController.forward();
+          }
+        },
+      ),
+    );
   }
 }
