@@ -17,7 +17,25 @@ class AnimationDemoHome extends StatefulWidget {
   _AnimationDemoHomeState createState() => _AnimationDemoHomeState();
 }
 
-class _AnimationDemoHomeState extends State<AnimationDemoHome> {
+class _AnimationDemoHomeState extends State<AnimationDemoHome>
+    with TickerProviderStateMixin {
+  AnimationController animationDemoController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    animationDemoController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 1000),
+    );
+
+    animationDemoController.addListener(() {
+      print('${animationDemoController.value}');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container();
