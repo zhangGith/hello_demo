@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 // import 'package:hello_demo/demo/date_table_demo.dart';
 import 'package:hello_demo/demo/radio_demo.dart';
@@ -29,25 +28,82 @@ class MaterailComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          ListItem(title: 'steper', page: SteperDemo(),),
-          ListItem(title: 'card', page: CardDemo(),),
-          ListItem(title: 'pageinated table', page: PaginatedDataTableDemo(),),
-          ListItem(title: 'dataTable', page: DataTableDemo(),),
-          ListItem(title: 'Chip', page: ChipDemo(),),
-          ListItem(title: 'expansion panel', page: ExpansionPanelDemo(),),
-          ListItem(title: 'snack bar', page: SnackBarDemo(),),
-          ListItem(title: 'bottomSheetDialog', page: BottomSheetDemo(),),
-          ListItem(title: 'alertdialog', page: AlertDialogDemo(),),
-          ListItem(title: 'simpleDialog', page: SimpleDialogDemo(),),
-          // ListItem(title: 'DateTime', page: DateTimeDemo(),),
-          ListItem(title: 'Slider', page: SliderDemo(),),
-          ListItem(title: 'Switch', page: SwitchDmeo(),),
-          ListItem(title: 'Radio', page: RadioDemo(),),
-          ListItem(title: 'CheckBox', page: CheckBoxDemo(),),
-          ListItem(title: 'Form', page: FormDemo(),),
-          ListItem(title: 'PopDemo', page: PopupMenuDemo(),),
-          ListItem(title: 'ButtonDemo', page: ButtonDemo(),),
-          ListItem(title: 'floatRaisedBtn', page: FloatRaisedBtn(),),
+          ListItem(
+            title: 'steper',
+            page: SteperDemo(),
+          ),
+          ListItem(
+            title: 'card',
+            page: CardDemo(),
+          ),
+          ListItem(
+            title: 'pageinated table',
+            page: PaginatedDataTableDemo(),
+          ),
+          ListItem(
+            title: 'dataTable',
+            page: DataTableDemo(),
+          ),
+          ListItem(
+            title: 'Chip',
+            page: ChipDemo(),
+          ),
+          ListItem(
+            title: 'expansion panel',
+            page: ExpansionPanelDemo(),
+          ),
+          ListItem(
+            title: 'snack bar',
+            page: SnackBarDemo(),
+          ),
+          ListItem(
+            title: 'bottomSheetDialog',
+            page: BottomSheetDemo(),
+          ),
+          ListItem(
+            title: 'alertdialog',
+            page: AlertDialogDemo(),
+          ),
+          ListItem(
+            title: 'simpleDialog',
+            page: SimpleDialogDemo(),
+          ),
+          ListItem(
+            title: 'DateTime',
+            page: DateTimeDemo(),
+          ),
+          ListItem(
+            title: 'Slider',
+            page: SliderDemo(),
+          ),
+          ListItem(
+            title: 'Switch',
+            page: SwitchDmeo(),
+          ),
+          ListItem(
+            title: 'Radio',
+            page: RadioDemo(),
+          ),
+          ListItem(
+            title: 'CheckBox',
+            page: CheckBoxDemo(),
+          ),
+          ListItem(
+            title: 'Form',
+            page: FormDemo(),
+          ),
+          ListItem(
+            title: 'PopDemo',
+            page: PopupMenuDemo(),
+          ),
+          ListItem(
+            title: 'ButtonDemo',
+            page: ButtonDemo(),
+          ),
+          ListItem(
+            title: 'floatRaisedBtn',
+            page: FloatRaisedBtn(),
+          ),
         ],
       ),
     );
@@ -55,205 +111,203 @@ class MaterailComponents extends StatelessWidget {
 }
 
 class ButtonDemo extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
     final Widget _flatBtnDemo = Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                  FlatButton(
-                    onPressed: () {}, 
-                    child: Text('FlatBtn'),
-                    splashColor: Colors.grey,
-                    textColor: Theme.of(context).accentColor,
-                  ),
-                  FlatButton.icon(
-                    onPressed: () {}, 
-                    icon: Icon(Icons.add),
-                    label: Text('btn'),
-                    splashColor: Colors.grey,
-                    textColor: Theme.of(context).accentColor,
-                  ),
-              ],
-            );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        FlatButton(
+          onPressed: () {},
+          child: Text('FlatBtn'),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        ),
+        FlatButton.icon(
+          onPressed: () {},
+          icon: Icon(Icons.add),
+          label: Text('btn'),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        ),
+      ],
+    );
 
     final Widget _raisedBtnDemo = Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                  Theme(
-                    data: Theme.of(context).copyWith(
-                      buttonColor: Theme.of(context).accentColor,
-                      buttonTheme: ButtonThemeData(
-                          textTheme: ButtonTextTheme.primary,
-                          // shape: BeveledRectangleBorder(
-                          //   borderRadius: BorderRadius.circular(30.0),
-                          // ),
-                          shape: StadiumBorder(),
-                      ),
-                    ), 
-                    child: RaisedButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                      elevation: 0.0,
-                    ),
-                  ),
-                  SizedBox(width: 20.0),
-                  RaisedButton.icon(
-                    onPressed: () {}, 
-                    icon: Icon(Icons.add),
-                    label: Text('btn'),
-                    splashColor: Colors.grey,
-                    textColor: Theme.of(context).accentColor,
-                    elevation: 10.0,
-                  ),
-              ],
-            );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Theme(
+          data: Theme.of(context).copyWith(
+            buttonColor: Theme.of(context).accentColor,
+            buttonTheme: ButtonThemeData(
+              textTheme: ButtonTextTheme.primary,
+              // shape: BeveledRectangleBorder(
+              //   borderRadius: BorderRadius.circular(30.0),
+              // ),
+              shape: StadiumBorder(),
+            ),
+          ),
+          child: RaisedButton(
+            onPressed: () {},
+            child: Text('FlatBtn'),
+            splashColor: Colors.grey,
+            // color: Theme.of(context).accentColor,
+            // textColor: Colors.white,
+            // textTheme: ButtonTextTheme.primary,
+            elevation: 0.0,
+          ),
+        ),
+        SizedBox(width: 20.0),
+        RaisedButton.icon(
+          onPressed: () {},
+          icon: Icon(Icons.add),
+          label: Text('btn'),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+          elevation: 10.0,
+        ),
+      ],
+    );
 
     final Widget _outlineBtnDemo = Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                  Theme(
-                    data: Theme.of(context).copyWith(
-                      buttonColor: Theme.of(context).accentColor,
-                      buttonTheme: ButtonThemeData(
-                          textTheme: ButtonTextTheme.primary,
-                          // shape: BeveledRectangleBorder(
-                          //   borderRadius: BorderRadius.circular(30.0),
-                          // ),
-                          shape: StadiumBorder(),
-                      ),
-                    ), 
-                    child: OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                  ),
-                  SizedBox(width: 20.0),
-                  OutlineButton.icon(
-                    onPressed: () {}, 
-                    icon: Icon(Icons.add),
-                    label: Text('btn'),
-                    splashColor: Colors.grey,
-                    textColor: Theme.of(context).accentColor,
-                  ),
-              ],
-            );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Theme(
+          data: Theme.of(context).copyWith(
+            buttonColor: Theme.of(context).accentColor,
+            buttonTheme: ButtonThemeData(
+              textTheme: ButtonTextTheme.primary,
+              // shape: BeveledRectangleBorder(
+              //   borderRadius: BorderRadius.circular(30.0),
+              // ),
+              shape: StadiumBorder(),
+            ),
+          ),
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('FlatBtn'),
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // color: Theme.of(context).accentColor,
+            // textColor: Colors.white,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+        SizedBox(width: 20.0),
+        OutlineButton.icon(
+          onPressed: () {},
+          icon: Icon(Icons.add),
+          label: Text('btn'),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        ),
+      ],
+    );
 
     final Widget _containerDemo = Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 160.0,
-                  child: OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                  ),
-              ],
-            );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 160.0,
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('FlatBtn'),
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // color: Theme.of(context).accentColor,
+            // textColor: Colors.white,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+      ],
+    );
     final Widget _expandDemo = Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                  ),
-                  SizedBox(width:20.0),
-                  Expanded(
-                    flex: 2,
-                  child: OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                  ),
-              ],
-            );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('FlatBtn'),
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // color: Theme.of(context).accentColor,
+            // textColor: Colors.white,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+        SizedBox(width: 20.0),
+        Expanded(
+          flex: 2,
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('FlatBtn'),
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // color: Theme.of(context).accentColor,
+            // textColor: Colors.white,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+      ],
+    );
 
     final Widget _buttonBarDemo = Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Theme(
-                  data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
-                      padding: EdgeInsets.symmetric(horizontal: 32.0),
-                    ),
-                  ), 
-                child: ButtonBar(
-                  children: <Widget>[
-                    OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                    OutlineButton(
-                      onPressed: () {}, 
-                      child: Text('FlatBtn'),
-                      splashColor: Colors.grey[100],
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                      textColor: Colors.black,
-                      highlightedBorderColor: Colors.grey,
-                      // color: Theme.of(context).accentColor,
-                      // textColor: Colors.white,
-                      // textTheme: ButtonTextTheme.primary,
-                    ),
-                  ],
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Theme(
+          data: Theme.of(context).copyWith(
+            buttonTheme: ButtonThemeData(
+              padding: EdgeInsets.symmetric(horizontal: 32.0),
+            ),
+          ),
+          child: ButtonBar(
+            children: <Widget>[
+              OutlineButton(
+                onPressed: () {},
+                child: Text('FlatBtn'),
+                splashColor: Colors.grey[100],
+                borderSide: BorderSide(
+                  color: Colors.black,
                 ),
+                textColor: Colors.black,
+                highlightedBorderColor: Colors.grey,
+                // color: Theme.of(context).accentColor,
+                // textColor: Colors.white,
+                // textTheme: ButtonTextTheme.primary,
+              ),
+              OutlineButton(
+                onPressed: () {},
+                child: Text('FlatBtn'),
+                splashColor: Colors.grey[100],
+                borderSide: BorderSide(
+                  color: Colors.black,
                 ),
-              ],
-            );
+                textColor: Colors.black,
+                highlightedBorderColor: Colors.grey,
+                // color: Theme.of(context).accentColor,
+                // textColor: Colors.white,
+                // textTheme: ButtonTextTheme.primary,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -293,9 +347,7 @@ class _WidgetDemo extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-
-              ],
+              children: [],
             ),
           ],
         ),
@@ -306,7 +358,7 @@ class _WidgetDemo extends StatelessWidget {
 
 class FloatRaisedBtn extends StatelessWidget {
   final Widget _floatingActionButton = FloatingActionButton(
-    onPressed: (){},
+    onPressed: () {},
     child: Icon(Icons.add),
     elevation: 0.0,
     backgroundColor: Colors.black87,
@@ -316,8 +368,8 @@ class FloatRaisedBtn extends StatelessWidget {
   );
 
   final Widget _floatingAddActionButton = FloatingActionButton.extended(
-    onPressed: () {}, 
-    label: Text('add'), 
+    onPressed: () {},
+    label: Text('add'),
     icon: Icon(Icons.add),
   );
 
@@ -341,7 +393,6 @@ class FloatRaisedBtn extends StatelessWidget {
 }
 
 class ListItem extends StatelessWidget {
-
   final String title;
   final Widget page;
 
