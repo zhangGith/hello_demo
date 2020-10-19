@@ -22,6 +22,7 @@ import './demo/bloc/block_demo.dart';
 import './demo/http/http_demo.dart';
 import './demo/animation/animation_demo.dart';
 import './demo/i18n/i18n_demo.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 
