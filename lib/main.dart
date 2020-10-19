@@ -39,9 +39,13 @@ class MyApp extends StatelessWidget {
         Locale('en', 'US'),
         Locale('zh', 'CN'),
       ],
+      // locale: Locale('en', 'US'),
+      localeResolutionCallback: (locale, supportedLocales) {
+        return Locale('en', 'US');
+      },
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/mdc',
+      initialRoute: '/i18n',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo(title: 'about'),
