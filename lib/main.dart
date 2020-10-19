@@ -23,6 +23,7 @@ import './demo/http/http_demo.dart';
 import './demo/animation/animation_demo.dart';
 import './demo/i18n/i18n_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hello_demo/demo/i18n/map/hello_demo_localizations.dart.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       localizationsDelegates: [
+        HelloDemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate
       ],
