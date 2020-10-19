@@ -41,10 +41,10 @@ class MyApp extends StatelessWidget {
         Locale('en', 'US'),
         Locale('zh', 'CN'),
       ],
-      // locale: Locale('en', 'US'),
-      localeResolutionCallback: (locale, supportedLocales) {
-        return Locale('en', 'US');
-      },
+      locale: Locale('zh', 'CN'),
+      // localeResolutionCallback: (locale, supportedLocales) {
+      //   return Locale('en', 'US');
+      // },
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
       initialRoute: '/i18n',

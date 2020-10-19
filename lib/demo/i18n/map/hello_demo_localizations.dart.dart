@@ -6,11 +6,11 @@ class HelloDemoLocalizations {
 
   HelloDemoLocalizations(this.locale);
   static Map<String, Map<String, String>> _localized = {
-    'en' : {
-      'title' : 'hello',
+    'en': {
+      'title': 'hello',
     },
-    'zh' : {
-      'title' : '您好'，
+    'zh': {
+      'title': '您好',
     }
   };
 
@@ -19,15 +19,15 @@ class HelloDemoLocalizations {
   }
 }
 
-class HelloDemoLocalizationsDelegate extends LocalizationsDelegate<HelloDemoLocalizations> {
+class HelloDemoLocalizationsDelegate
+    extends LocalizationsDelegate<HelloDemoLocalizations> {
   HelloDemoLocalizationsDelegate();
 
   @override
   Future<HelloDemoLocalizations> load(Locale locale) {
     // TODO: implement load
     return SynchronousFuture<HelloDemoLocalizations>(
-      HelloDemoLocalizations(locale)
-    );
+        HelloDemoLocalizations(locale));
   }
 
   @override
@@ -37,9 +37,9 @@ class HelloDemoLocalizationsDelegate extends LocalizationsDelegate<HelloDemoLoca
   }
 
   @override
-  bool shouldReload(covariant LocalizationsDelegate<HelloDemoLocalizations> old) {
+  bool shouldReload(
+      covariant LocalizationsDelegate<HelloDemoLocalizations> old) {
     // TODO: implement shouldReload
     return false;
   }
-  
 }
