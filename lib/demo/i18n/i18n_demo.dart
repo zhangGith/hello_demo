@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hello_demo/demo/i18n/map/hello_demo_localizations.dart.dart';
+// import 'package:hello_demo/demo/i18n/map/hello_demo_localizations.dart.dart';
+import 'package:hello_demo/demo/i18n/intl/hello_demo_localizations.dart';
+import 'package:hello_demo/demo/i18n/intl/hello_demo_localizations.dart';
 
 class I18nDemo extends StatelessWidget {
   @override
@@ -17,7 +19,8 @@ class I18nDemo extends StatelessWidget {
           children: [
             Text(locale.toString()),
             Text(
-              Localizations.of(context, HelloDemoLocalizations).title,
+              // Localizations.of(context, HelloDemoLocalizations).title,
+              HelloDemoLocalizations.of(context).greet('today'),
               style: Theme.of(context).textTheme.title,
             )
           ],

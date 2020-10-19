@@ -23,7 +23,8 @@ import './demo/http/http_demo.dart';
 import './demo/animation/animation_demo.dart';
 import './demo/i18n/i18n_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hello_demo/demo/i18n/map/hello_demo_localizations.dart.dart';
+// import 'package:hello_demo/demo/i18n/map/hello_demo_localizations.dart';
+import 'package:hello_demo/demo/i18n/intl/hello_demo_localizations.dart';
 
 void main() => runApp(MyApp());
 

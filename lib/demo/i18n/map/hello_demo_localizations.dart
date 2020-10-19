@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show SynchronousFuture;
+import 'package:hello_demo/demo/i18n/intl/hello_demo_localizations.dart';
 
 class HelloDemoLocalizations {
   final Locale locale;
 
   HelloDemoLocalizations(this.locale);
+
+  static HelloDemoLocalizations of(BuildContext context) {
+    return Localizations.of<HelloDemoLocalizations>(
+        context, HelloDemoLocalizations);
+  }
+
   static Map<String, Map<String, String>> _localized = {
     'en': {
       'title': 'hello',
