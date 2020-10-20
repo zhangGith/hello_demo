@@ -8,6 +8,21 @@ class TestDemo extends StatelessWidget {
         title: Text('TestDemo'),
         elevation: 0.0,
       ),
+      body: TestHomeDemo(),
+    );
+  }
+}
+
+class TestHomeDemo extends StatefulWidget {
+  @override
+  _TestHomeDemoState createState() => _TestHomeDemoState();
+}
+
+class _TestHomeDemoState extends State<TestHomeDemo> {
+  @override
+  Widget build(BuildContext context) {
+    return Chip(
+      label: Text('hello'),
     );
   }
 }
