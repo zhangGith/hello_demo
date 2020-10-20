@@ -19,10 +19,23 @@ class TestHomeDemo extends StatefulWidget {
 }
 
 class _TestHomeDemoState extends State<TestHomeDemo> {
+  int _count = 0;
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      label: Text('hello'),
+    return Row(
+      children: [
+        Chip(
+          label: Text('hello'),
+        ),
+        ActionChip(
+          label: Text('$_count'),
+          onPressed: () {
+            setState(() {
+              _count++;
+            });
+          },
+        ),
+      ],
     );
   }
 }

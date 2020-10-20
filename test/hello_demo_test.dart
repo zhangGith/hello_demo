@@ -17,5 +17,16 @@ void main() {
     // expect(lText, findsNothing);
     expect(lText, findsWidgets);
     // expect(lText, findsOneWidget);
+
+    final actionText = find.text('0');
+    expect(actionText, findsOneWidget);
+
+    final actionChip = find.byType(ActionChip);
+    await tester.tap(actionChip);
+    await tester.pump();
+
+    final actionAfterTap = find.text('1');
+    expect(actionAfterTap, findsOneWidget);
+    expect(actionText, findsNothing);
   });
 }
