@@ -4,6 +4,7 @@ import 'package:hello_demo/demo/http/http_demo.dart';
 import 'package:hello_demo/demo/rxdart/rxdart_demo.dart';
 import 'package:hello_demo/demo/state/state_management.dart';
 import 'package:hello_demo/demo/stream/stream_demo.dart';
+import 'package:hello_demo/demo/test/test_demo.dart';
 import './model/post.dart';
 import './demo/list_view.dart';
 import './demo/drawer_demo.dart';
@@ -25,6 +26,7 @@ import './demo/i18n/i18n_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 // import 'package:hello_demo/demo/i18n/map/hello_demo_localizations.dart';
 import 'package:hello_demo/demo/i18n/intl/hello_demo_localizations.dart';
+import './demo/test/test_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
       // },
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/i18n',
+      initialRoute: '/test',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo(title: 'about'),
@@ -61,6 +63,7 @@ class MyApp extends StatelessWidget {
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
         '/i18n': (context) => I18nDemo(),
+        '/test': (context) => TestDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
